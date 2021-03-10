@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-    public float acceleration = 5;
+    public float acceleration = 20;
     public float maxHoorizontalSpeed = 10;
-    public float InstatnAccelerationMaxSpeed = 3;
+    public float breakAndLowSpeedAccBoost = 10;
+    //maksymalna i minimalna predkość przy której zwiekszane jest przyśpieszenie
+    public float LowSpeedTreshHold = 3;
+    public float maxSpeedTreshHold = 20;
     private float Friction = 10.0f;
     public int jumpNumber = 2;
     public float jumpVelocity = 10;
@@ -50,17 +53,23 @@ public class movement : MonoBehaviour
         {
             if(grounded && rb.velocity.x !=0)
             {
-               rb.velocity -= rb.velocity.x/Mathf.Abs(rb.velocity.x)*Vector3.right*Time.deltaTime*Friction; 
+                float targetBreakingSpeed = rb.velocity.x - rb.velocity.x/Mathf.Abs(rb.velocity.x)*1*Time.deltaTime*Friction;
+                if(targetBreakingSpeed/rb.velocity.x <0)
+                {
+                    targetBreakingSpeed = 0;
+                }
+                rb.velocity = new Vector3(targetBreakingSpeed,rb.velocity.y,0);    
             }
 
         }
         else{
             if(grounded || accelerateWhileMidAir)
             {
+                
                 float targetSpeed;
-                if(rb.velocity.x*direction < InstatnAccelerationMaxSpeed)
+                if(rb.velocity.x*direction < LowSpeedTreshHold && rb.velocity.x*direction >-maxSpeedTreshHold)
                 {
-                    targetSpeed = direction*InstatnAccelerationMaxSpeed;
+                    targetSpeed = rb.velocity.x + direction*acceleration*Time.deltaTime*breakAndLowSpeedAccBoost;
                 }
                 else{
                     targetSpeed = rb.velocity.x +direction*acceleration*Time.deltaTime;
@@ -81,6 +90,7 @@ public class movement : MonoBehaviour
             {
                 rb.velocity = new Vector3(rb.velocity.x,jumpVelocity,0);
                 jumpsLeft--;
+                   
             }
 
 
@@ -88,7 +98,7 @@ public class movement : MonoBehaviour
             
 
         }
-
+        
 
 
 

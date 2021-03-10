@@ -943,7 +943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectToFollow: {fileID: 1181650631}
-  Offset: {x: 0, y: 2, z: -10}
+  Offset: {x: 0, y: 2, z: -30}
 --- !u!4 &1416686663 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1653497118920365192, guid: e348cdbef2c348646a840f7066d41a3e, type: 3}
