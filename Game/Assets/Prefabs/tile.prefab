@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6536156073710116251}
   - component: {fileID: 9090899630327704407}
   - component: {fileID: 3556427691308087679}
+  - component: {fileID: 4966716699335380712}
   m_Layer: 0
   m_Name: tile
   m_TagString: Tile
@@ -112,3 +113,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.2, z: 1}
   m_Center: {x: 0, y: 0.6, z: 0}
+--- !u!114 &4966716699335380712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7663362907380952515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5756e123d0e019644b636ecc87b7cf27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 588648769646504230, guid: 819f704dcca738b4dbeb15510cdfeb1a, type: 3}
