@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: 5
-  maxHoorizontalSpeed: 10
-  breakAndLowSpeedAccBoost: 10
+  maxHoorizontalSpeed: 15
+  breakAndLowSpeedAccBoost: 8
   LowSpeedTreshHold: 3
   maxSpeedTreshHold: 20
   jumpNumber: 2

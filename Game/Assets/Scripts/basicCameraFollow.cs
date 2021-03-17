@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class basicCameraFollow : MonoBehaviour
 {
+    //nie ma co tłumaczyć najprostrzy skrypt kontrolujący kamere
     public GameObject ObjectToFollow;
     public Vector3 Offset;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
-    {
-        
+    {   
         transform.position =ObjectToFollow.transform.position +Offset;
     }
 }
