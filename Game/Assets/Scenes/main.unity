@@ -493,8 +493,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6336531435642332284, guid: 88cf308f4b346a14683e04cf717c1edf, type: 3}
-      propertyPath: maxHoorizontalSpeed
+      propertyPath: acceleration
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6336531435642332284, guid: 88cf308f4b346a14683e04cf717c1edf, type: 3}
+      propertyPath: LowSpeedTreshHold
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88cf308f4b346a14683e04cf717c1edf, type: 3}
