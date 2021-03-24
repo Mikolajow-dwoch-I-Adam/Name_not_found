@@ -8,6 +8,11 @@ public class playerBooletControll : MonoBehaviour
     private Camera cam;
     
     public GameObject boolet;
+    public GameObject explosionReadyParticles;
+    public GameObject fulyLoadedParticles;
+    private GameObject currentParticles;
+    private bool spawnedParticles = false;
+    private bool spawnedFullyChargedParticles = false;
     public float minBooletVelocity = 10;
     public float maxBooletVelocity = 100;
     public float timeToFullyCharge = 4.0f;
@@ -29,6 +34,26 @@ public class playerBooletControll : MonoBehaviour
         cooldownLeft -= Time.deltaTime;
         if(Input.GetMouseButton(0))
         {
+            if(!spawnedParticles)
+            {
+                if(timeCharged>=timeToCreateExplosion)
+                {
+                    currentParticles = Instantiate(explosionReadyParticles,transform.position,Quaternion.identity) as GameObject;
+                    currentParticles.transform.parent = this.transform;
+                    spawnedParticles = true;
+                }
+            }
+            else if(timeCharged>=timeToFullyCharge)
+            {
+                if(!spawnedFullyChargedParticles)
+                {
+                    Destroy(currentParticles);
+                    currentParticles = Instantiate(fulyLoadedParticles,transform.position,Quaternion.identity) as GameObject;
+                    currentParticles.transform.parent = this.transform;
+                    spawnedParticles = true;
+                    spawnedFullyChargedParticles = true;
+                }
+            }
             timeCharged += Time.deltaTime;
         }
         
@@ -65,6 +90,11 @@ public class playerBooletControll : MonoBehaviour
                 //reset zmiennych kontrolujacych eksplozje
                 timeCharged = 0;
                 cooldownLeft = cooldown;
+
+                //zniszczenie efektów
+                Destroy(currentParticles);
+                spawnedFullyChargedParticles = false;
+                spawnedParticles = false;
             }
             
         }

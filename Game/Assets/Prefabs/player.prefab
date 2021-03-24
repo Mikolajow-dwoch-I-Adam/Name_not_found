@@ -147,6 +147,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boolet: {fileID: 6627082097419489184, guid: 701878a0db02f8a49af7f73780852588, type: 3}
+  explosionReadyParticles: {fileID: 5748400255285079718, guid: d5f23745089b2c9439cec57b68bcf5f1, type: 3}
+  fulyLoadedParticles: {fileID: 3399876635877382413, guid: 6dccbeaa279ea4f45a3b948ba524707c, type: 3}
   minBooletVelocity: 10
   maxBooletVelocity: 40
   timeToFullyCharge: 4
+  timeToCreateExplosion: 2
+  minExplosionRadius: 1.5
+  maxExplosionRadius: 2
+  minExplosionForce: 3
+  maxExplosionForce: 8
+  recoilFactor: 0.25
+  cooldown: 1
