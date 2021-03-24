@@ -97,7 +97,7 @@ public class movement : MonoBehaviour
                     targetSpeed = rb.velocity.x + direction*acceleration*Time.deltaTime;
                 }
                 
-                if(Mathf.Abs(targetSpeed) <= maxHoorizontalSpeed)
+                if(direction*targetSpeed <= maxHoorizontalSpeed)
                 {
                     rb.velocity = new Vector3(targetSpeed, rb.velocity.y,0);
                 } 
