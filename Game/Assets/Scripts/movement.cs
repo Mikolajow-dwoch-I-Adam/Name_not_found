@@ -55,6 +55,14 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //powrót na spawn w razie spadku w otchłań
+        if (rb.position.y < -20)
+        {
+            rb.position = new Vector3(0, 1, 0);
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
         //sprawdzenie w którą stronę chce poruszać się gracz direction ==  0 również gdy wciśnięte są oba przyciski
         float direction=0;
         if(Input.GetKey("a"))
