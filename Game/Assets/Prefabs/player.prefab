@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 868485493743930473}
   - component: {fileID: 6336531435642332284}
   - component: {fileID: 1215292607725089074}
+  - component: {fileID: 7354997785246242412}
   m_Layer: 9
   m_Name: player
   m_TagString: Untagged
@@ -159,3 +160,23 @@ MonoBehaviour:
   maxExplosionForce: 8
   recoilFactor: 0.25
   cooldown: 1
+--- !u!114 &7354997785246242412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868485493743930472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eadff84361801a4e97e8b5a7f08268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fulyLoadedParticles: {fileID: 3399876635877382413, guid: 6dccbeaa279ea4f45a3b948ba524707c, type: 3}
+  timeToFullyCharge: 4
+  minDashVelocity: 2
+  maxDashVelocity: 10
+  hitVelocity: 15
+  radiusOfDestruction: 1.5
+  fullyLoadedDashLenght: 1
+  cooldown: 3

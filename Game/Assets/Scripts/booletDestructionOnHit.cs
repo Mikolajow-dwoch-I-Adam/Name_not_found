@@ -15,6 +15,10 @@ public class booletDestructionOnHit : MonoBehaviour
             {
                 collider.gameObject.GetComponent<tileDestruction>().DestroyTile();
             }
+            else if(collider.tag == "Tile_collider")
+            {
+                collider.transform.parent.gameObject.GetComponent<tileDestruction>().DestroyTile();
+            }
             else if(collider.gameObject.GetComponent<Rigidbody>()){
                 Vector3 direction = collider.transform.position - transform.position;
                 collider.gameObject.GetComponent<Rigidbody>().velocity+=direction.normalized*explosionForce;
